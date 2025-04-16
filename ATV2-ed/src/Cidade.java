@@ -1,21 +1,17 @@
 public class Cidade {
-    
     String nomeCidade;
+    double distancia; // Agora você pode armazenar a distância diretamente aqui.
     DoubleList<LigacaoDireta> ligacoesDiretas;
-    double distancia;
-    
+
     public Cidade(String nome, double distancia) {
         this.nomeCidade = nome;
         this.distancia = distancia;
         ligacoesDiretas = new DoubleList<>();
-
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String ligacoes = ligacoesDiretas.listar(LigacaoDireta::toString);
-        
-        return "Cidade: " + nomeCidade + (ligacoes.isEmpty()? "\n Sem ligacoes diretas" : "\n Ligacoes diretas: " + ligacoes);
-
+        return nomeCidade + " (" + distancia + " km)" + (ligacoes.isEmpty() ? " - Sem ligações" : "\n" + ligacoes);
     }
 }

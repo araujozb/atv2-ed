@@ -23,8 +23,11 @@ public class Main {
 
     static void cadastrarCidade() {
         String nome = JOptionPane.showInputDialog("Nome da Cidade:");
-        cidades.add(new Cidade(nome));
+        double distancia = Double.parseDouble(JOptionPane.showInputDialog("Distância (km):"));
+        cidades.add(new Cidade(nome, distancia)); 
+        JOptionPane.showMessageDialog(null, "Cidade cadastrada com sucesso!");
     }
+    
 
     static void cadastrarLigacao() {
         String origem = JOptionPane.showInputDialog("Cidade origem:");
