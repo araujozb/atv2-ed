@@ -2,10 +2,13 @@ public class Cidade {
     
     String nomeCidade;
     DoubleList<LigacaoDireta> ligacoesDiretas;
+    double distancia;
     
-    public Cidade(String nome) {
+    public Cidade(String nome, double distancia) {
         this.nomeCidade = nome;
+        this.distancia = distancia;
         ligacoesDiretas = new DoubleList<>();
+
     }
 
     @Override
